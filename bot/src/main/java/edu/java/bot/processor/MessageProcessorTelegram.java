@@ -3,15 +3,14 @@ package edu.java.bot.processor;
 import com.pengrad.telegrambot.model.Update;
 import com.pengrad.telegrambot.request.SendMessage;
 import edu.java.bot.command.Command;
-import org.apache.logging.log4j.core.tools.picocli.CommandLine;
 import org.springframework.stereotype.Component;
 import java.util.List;
 
 @Component
-public class MessageProcessor implements UserMessageProcessor {
+public class MessageProcessorTelegram implements UserMessageProcessor<SendMessage,Update> {
     private final List<Command> commands;
 
-    public MessageProcessor(List<Command> commands) {
+    public MessageProcessorTelegram(List<Command> commands) {
         this.commands = commands;
     }
 
